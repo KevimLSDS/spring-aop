@@ -30,6 +30,24 @@ public class AccountDAO {
 
 		return myAccs;
 	}
+	
+	public List<Account> findAccounts(Boolean tripWire) {
+		if (tripWire) {
+			throw new RuntimeException("!- Intentional exception -!");
+		}
+
+		var myAccs = new ArrayList<Account>();
+
+		Account temp1 = new Account("John", "Silver");
+		Account temp2 = new Account("Madhu", "Platinum");
+		Account temp3 = new Account("Luca", "Gold");
+
+		myAccs.add(temp1);
+		myAccs.add(temp2);
+		myAccs.add(temp3);
+
+		return myAccs;
+	}
 
 	public boolean doWork() {
 		System.out.println("\t" + getClass() + ": doWork()");

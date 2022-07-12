@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -62,6 +63,16 @@ public class MyDemoLoggingAspect {
 			tempAcc.setName(tempAcc.getName().toUpperCase());
 		}
 
+	}
+	
+	@AfterThrowing(pointcut = "com.springcourse.project.aspect.AopDeclarations.afterReturningAccountList()", throwing="theException")
+	public void afterThrowingAdvice(JoinPoint theJoinPoint, Throwable theException) {
+		
+		String method = theJoinPoint.getSignature().toShortString();
+		System.out.println("\n====>>> Executing @AfterThrowing on method: " + method);
+		
+		System.out.println("\n====>>> The exception is: " + theException);
+		
 	}
 
 }
