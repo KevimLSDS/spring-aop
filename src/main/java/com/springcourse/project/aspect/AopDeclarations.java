@@ -25,6 +25,10 @@ public class AopDeclarations {
 
 	@Pointcut("execution(* com.springcourse.project.dao.AccountDAO.findAccounts(..))")
 	public void afterReturningAccountList() {
-
 	}
+
+	@Pointcut("execution(* com.springcourse.project.service.TrafficFortuneService.getFortune())")
+	public void aroundGetFortuneService() {
+	}
+
 }
