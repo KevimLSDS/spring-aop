@@ -27,7 +27,7 @@ public class AopDeclarations {
 	public void afterReturningAccountList() {
 	}
 
-	@Pointcut("execution(* com.springcourse.project.service.TrafficFortuneService.getFortune())")
+	@Pointcut("execution(* com.springcourse.project.service.TrafficFortuneService.getFortune(..))")
 	public void aroundGetFortuneService() {
 	}
 

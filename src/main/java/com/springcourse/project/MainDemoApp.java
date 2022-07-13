@@ -32,8 +32,8 @@ public class MainDemoApp implements CommandLineRunner {
 		theAccountDAO.setName("foobar");
 		theAccountDAO.setServiceCode("silver");
 
-		String name = theAccountDAO.getName();
-		String serviceCode = theAccountDAO.getServiceCode();
+		theAccountDAO.getName();
+		theAccountDAO.getServiceCode();
 
 		theMembershipDAO.addSomething();
 		theMembershipDAO.goToSleep();
